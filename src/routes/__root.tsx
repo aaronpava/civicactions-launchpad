@@ -15,6 +15,7 @@ import { SkipLinks } from "@/components/layout/SkipLinks";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteGate } from "@/components/layout/SiteGate";
 
 function NotFoundComponent() {
   return (
@@ -149,6 +150,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SiteGate />
       <SkipLinks />
       <AnnouncementBar />
       <Header />
