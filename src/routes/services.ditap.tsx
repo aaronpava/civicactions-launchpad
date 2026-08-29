@@ -15,6 +15,8 @@ export const Route = createFileRoute("/services/ditap")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -76,7 +78,7 @@ function InterestForm() {
             className={fieldClass}
           />
           {errors[field.id] ? (
-            <p id={`ditap-${field.id}-error`} className="mt-2 text-base text-red">
+            <p id={`ditap-${field.id}-error`} className="mt-2 text-base text-red-dark">
               {errors[field.id]}
             </p>
           ) : null}
@@ -103,7 +105,7 @@ function Page() {
   return (
     <>
       <section className="container-1200 py-14 md:py-20">
-        <p className="eyebrow text-red">Workforce development</p>
+        <p className="eyebrow text-red-dark">Workforce development</p>
         <h1 className="mt-3 max-w-3xl text-navy">{ditap.title}</h1>
         <p className="mt-6 max-w-3xl text-ink">{ditap.intro}</p>
       </section>
@@ -156,7 +158,7 @@ function Page() {
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {ditap.outcomes.map((item) => (
             <li key={item} className="flex gap-3 bg-gray-100 p-4 text-base text-ink">
-              <span aria-hidden="true" className="font-bold text-red">
+              <span aria-hidden="true" className="font-bold text-red-dark">
                 ✓
               </span>
               <span>{item}</span>

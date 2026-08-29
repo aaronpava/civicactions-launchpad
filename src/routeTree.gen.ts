@@ -18,6 +18,7 @@ import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as LicensingRouteImport } from './routes/licensing'
 import { Route as PressRouteImport } from './routes/press'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SustainabilityRouteImport } from './routes/sustainability'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
@@ -72,6 +73,11 @@ const PressRoute = PressRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SustainabilityRoute = SustainabilityRouteImport.update({
@@ -135,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/licensing': typeof LicensingRoute
   '/press': typeof PressRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sustainability': typeof SustainabilityRoute
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -156,6 +163,7 @@ export interface FileRoutesByTo {
   '/licensing': typeof LicensingRoute
   '/press': typeof PressRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sustainability': typeof SustainabilityRoute
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -178,6 +186,7 @@ export interface FileRoutesById {
   '/licensing': typeof LicensingRoute
   '/press': typeof PressRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sustainability': typeof SustainabilityRoute
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -201,6 +210,7 @@ export interface FileRouteTypes {
     | '/licensing'
     | '/press'
     | '/privacy'
+    | '/sitemap.xml'
     | '/sustainability'
     | '/team'
     | '/case-studies/$slug'
@@ -222,6 +232,7 @@ export interface FileRouteTypes {
     | '/licensing'
     | '/press'
     | '/privacy'
+    | '/sitemap.xml'
     | '/sustainability'
     | '/team'
     | '/case-studies/$slug'
@@ -243,6 +254,7 @@ export interface FileRouteTypes {
     | '/licensing'
     | '/press'
     | '/privacy'
+    | '/sitemap.xml'
     | '/sustainability'
     | '/team'
     | '/case-studies/$slug'
@@ -265,6 +277,7 @@ export interface RootRouteChildren {
   LicensingRoute: typeof LicensingRoute
   PressRoute: typeof PressRoute
   PrivacyRoute: typeof PrivacyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SustainabilityRoute: typeof SustainabilityRoute
   TeamRoute: typeof TeamRoute
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
@@ -340,6 +353,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sustainability': {
@@ -425,6 +445,7 @@ const rootRouteChildren: RootRouteChildren = {
   LicensingRoute: LicensingRoute,
   PressRoute: PressRoute,
   PrivacyRoute: PrivacyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SustainabilityRoute: SustainabilityRoute,
   TeamRoute: TeamRoute,
   CaseStudiesSlugRoute: CaseStudiesSlugRoute,

@@ -75,7 +75,7 @@ export function TeamDirectory() {
                 "nav-label border px-4 py-2.5 transition-colors",
                 pressed
                   ? "border-red bg-red text-white"
-                  : "border-gray-400 bg-white text-navy hover:border-red hover:text-red",
+                  : "border-gray-400 bg-white text-navy hover:border-red hover:text-red-dark",
               )}
             >
               {role}
@@ -96,7 +96,7 @@ export function TeamDirectory() {
               <h3 className="mt-4 text-xl">
                 <button
                   type="button"
-                  className="text-left text-navy underline decoration-1 underline-offset-4 hover:text-red"
+                  className="text-left text-navy underline decoration-1 underline-offset-4 hover:text-red-dark"
                   onClick={(event) => open(member, event.currentTarget)}
                 >
                   {member.name}
@@ -130,13 +130,13 @@ export function TeamDirectory() {
                 <h2 id="team-dialog-title" className="text-2xl text-navy">
                   {selected.name}
                 </h2>
-                <p className="eyebrow mt-2 text-red">{selected.role}</p>
+                <p className="eyebrow mt-2 text-red-dark">{selected.role}</p>
               </div>
               <button
                 ref={closeRef}
                 type="button"
                 onClick={close}
-                className="text-2xl leading-none text-navy hover:text-red"
+                className="text-2xl leading-none text-navy hover:text-red-dark"
               >
                 <span aria-hidden="true">×</span>
                 <span className="sr-only">Close bio</span>

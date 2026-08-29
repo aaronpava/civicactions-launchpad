@@ -14,6 +14,8 @@ export const Route = createFileRoute("/team")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -49,7 +51,7 @@ function Page() {
           <p className="mt-6">
             <Link
               to="/careers"
-              className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+              className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
             >
               {teamNote.linkLabel}
             </Link>

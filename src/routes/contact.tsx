@@ -13,6 +13,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -102,7 +104,7 @@ function Page() {
                 className={fieldClass}
               />
               {errors.name ? (
-                <p id="name-error" className="mt-2 text-base text-red">
+                <p id="name-error" className="mt-2 text-base text-red-dark">
                   {errors.name}
                 </p>
               ) : null}
@@ -123,7 +125,7 @@ function Page() {
                 className={fieldClass}
               />
               {errors.email ? (
-                <p id="email-error" className="mt-2 text-base text-red">
+                <p id="email-error" className="mt-2 text-base text-red-dark">
                   {errors.email}
                 </p>
               ) : null}
@@ -144,7 +146,7 @@ function Page() {
                 className={fieldClass}
               />
               {errors.organization ? (
-                <p id="organization-error" className="mt-2 text-base text-red">
+                <p id="organization-error" className="mt-2 text-base text-red-dark">
                   {errors.organization}
                 </p>
               ) : null}
@@ -171,7 +173,7 @@ function Page() {
                 ))}
               </select>
               {errors.topic ? (
-                <p id="topic-error" className="mt-2 text-base text-red">
+                <p id="topic-error" className="mt-2 text-base text-red-dark">
                   {errors.topic}
                 </p>
               ) : null}
@@ -192,7 +194,7 @@ function Page() {
                 className={fieldClass}
               />
               {errors.message ? (
-                <p id="message-error" className="mt-2 text-base text-red">
+                <p id="message-error" className="mt-2 text-base text-red-dark">
                   {errors.message}
                 </p>
               ) : null}
@@ -206,7 +208,7 @@ function Page() {
           <h2 className="text-2xl text-navy">Other ways to reach us</h2>
           <div className="mt-6 space-y-6 text-base text-ink">
             <div>
-              <h3 className="eyebrow text-red">Mailing address</h3>
+              <h3 className="eyebrow text-red-dark">Mailing address</h3>
               <address className="mt-2 not-italic">
                 3527 Mt. Diablo Blvd., Unit 269
                 <br />
@@ -214,22 +216,22 @@ function Page() {
               </address>
             </div>
             <div>
-              <h3 className="eyebrow text-red">Phone</h3>
+              <h3 className="eyebrow text-red-dark">Phone</h3>
               <p className="mt-2">
                 <a
                   href="tel:+15104087510"
-                  className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+                  className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
                 >
                   510-408-7510
                 </a>
               </p>
             </div>
             <div>
-              <h3 className="eyebrow text-red">Email</h3>
+              <h3 className="eyebrow text-red-dark">Email</h3>
               <p className="mt-2">
                 <a
                   href="mailto:contact@civicactions.com"
-                  className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+                  className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
                 >
                   contact@civicactions.com
                 </a>

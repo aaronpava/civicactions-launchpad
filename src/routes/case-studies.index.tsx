@@ -16,6 +16,8 @@ export const Route = createFileRoute("/case-studies/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -55,7 +57,7 @@ function Page() {
       </AngledBand>
 
       <section aria-labelledby="filter-heading" className="container-1200 py-12">
-        <h2 id="filter-heading" className="eyebrow text-red">
+        <h2 id="filter-heading" className="eyebrow text-red-dark">
           Filter by service category
         </h2>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -103,7 +105,7 @@ function Page() {
         <div className="mt-8 grid gap-10 md:grid-cols-3">
           {moreClients.map((group) => (
             <div key={group.category}>
-              <h3 className="eyebrow text-red">{group.category}</h3>
+              <h3 className="eyebrow text-red-dark">{group.category}</h3>
               <ul className="mt-4 space-y-2">
                 {group.clients.map((client) => (
                   <li key={client} className="text-base text-ink">

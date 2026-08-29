@@ -75,7 +75,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudyEntry }) {
             { term: "Contract vehicle", value: detail.atAGlance.contractVehicle },
           ].map((row) => (
             <div key={row.term} className="border-gray-400 p-6 not-last:border-b sm:not-last:border-b-0 sm:border-r sm:last:border-r-0">
-              <dt className="eyebrow text-red">{row.term}</dt>
+              <dt className="eyebrow text-red-dark">{row.term}</dt>
               <dd className="mt-2 text-base text-ink">{row.value}</dd>
             </div>
           ))}

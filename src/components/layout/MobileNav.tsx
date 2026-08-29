@@ -102,7 +102,7 @@ export function MobileNav() {
                 <button
                   type="button"
                   onClick={() => setActiveGroup(null)}
-                  className="nav-label flex items-center gap-2 py-3 text-red"
+                  className="nav-label flex items-center gap-2 py-3 text-red-dark"
                 >
                   <ChevronLeft aria-hidden="true" className="size-4" /> Back
                 </button>

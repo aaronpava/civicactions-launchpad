@@ -13,6 +13,8 @@ export const Route = createFileRoute("/contracting/sewp-vi")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -24,7 +26,7 @@ function Page() {
   return (
     <>
       <section className="container-1200 py-14 md:py-20">
-        <p className="eyebrow text-red">Contract vehicle</p>
+        <p className="eyebrow text-red-dark">Contract vehicle</p>
         <h1 className="mt-3 text-navy">{sewp.title}</h1>
         <p className="mt-6 max-w-3xl text-ink">{sewp.intro}</p>
       </section>
@@ -51,7 +53,7 @@ function Page() {
             <ol className="mt-6 space-y-5">
               {sewp.howToOrder.map((step, index) => (
                 <li key={step.slice(0, 30)} className="flex gap-4 text-base text-ink">
-                  <span aria-hidden="true" className="font-serif text-2xl text-red">
+                  <span aria-hidden="true" className="font-serif text-2xl text-red-dark">
                     {index + 1}
                   </span>
                   <span>{step}</span>
@@ -83,14 +85,14 @@ function Page() {
           <p className="mt-3 text-base">
             <a
               href={`mailto:${sewp.contact.email}`}
-              className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+              className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
             >
               {sewp.contact.email}
             </a>
             {" · "}
             <a
               href="tel:+15104087510"
-              className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+              className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
             >
               {sewp.contact.phone}
             </a>

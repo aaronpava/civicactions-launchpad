@@ -12,7 +12,7 @@ export function ServiceCard({ service }: { service: Service }) {
       <h3 className="text-2xl">
         <Link
           to={service.to}
-          className="text-navy underline decoration-1 underline-offset-4 hover:text-red"
+          className="text-navy underline decoration-1 underline-offset-4 hover:text-red-dark"
         >
           {service.title}
         </Link>

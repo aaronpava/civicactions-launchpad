@@ -13,6 +13,8 @@ export const Route = createFileRoute("/press")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -35,13 +37,13 @@ function Page() {
         <ul className="mt-8 divide-y divide-gray-400 border-y border-gray-400">
           {pressItems.map((item) => (
             <li key={item.headline} className="py-6">
-              <p className="eyebrow text-red">
+              <p className="eyebrow text-red-dark">
                 {item.outlet} · {item.date}
               </p>
               <h3 className="mt-2 text-xl">
                 <a
                   href={item.href}
-                  className="text-navy underline decoration-1 underline-offset-4 hover:text-red"
+                  className="text-navy underline decoration-1 underline-offset-4 hover:text-red-dark"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -63,14 +65,14 @@ function Page() {
           <p className="mt-5 text-base text-ink">
             <a
               href={`mailto:${mediaContact.email}`}
-              className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+              className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
             >
               {mediaContact.email}
             </a>
             {" · "}
             <a
               href="tel:+15104087510"
-              className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+              className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
             >
               {mediaContact.phone}
             </a>

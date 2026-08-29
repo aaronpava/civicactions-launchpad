@@ -12,6 +12,8 @@ export const Route = createFileRoute("/accessibility-statement")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -36,7 +38,7 @@ function Page() {
     <section className="container-1200 py-14 md:py-20">
       <div className="max-w-[680px]">
         <h1 className="text-navy">Accessibility statement</h1>
-        <p className="eyebrow mt-4 text-red">Last updated {a11y.updated}</p>
+        <p className="eyebrow mt-4 text-red-dark">Last updated {a11y.updated}</p>
         <p className="mt-6 text-ink">{a11y.intro}</p>
 
         <div className="mt-12 space-y-12">
@@ -69,14 +71,14 @@ function Page() {
             <p className="mt-6 text-base">
               <a
                 href={`mailto:${a11y.contact.email}`}
-                className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+                className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
               >
                 {a11y.contact.email}
               </a>
               {" · "}
               <a
                 href="tel:+15104087510"
-                className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+                className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
               >
                 {a11y.contact.phone}
               </a>

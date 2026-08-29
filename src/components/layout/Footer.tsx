@@ -4,7 +4,7 @@ import { Wordmark } from "./Wordmark";
 import { SocialIcon } from "./SocialIcon";
 import { footerMenu, legalLinks, socialLinks, contactInfo } from "@/data/footer";
 
-const redLink = "text-red underline decoration-1 underline-offset-4 hover:text-red-dark";
+const redLink = "text-red-dark underline decoration-1 underline-offset-4 hover:text-navy";
 
 export function Footer() {
   return (

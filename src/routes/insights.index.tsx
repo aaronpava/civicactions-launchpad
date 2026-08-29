@@ -15,6 +15,8 @@ export const Route = createFileRoute("/insights/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -55,7 +57,7 @@ function Page() {
           Search and filter posts
         </h2>
         <div className="max-w-md">
-          <label htmlFor="insights-search" className="eyebrow text-red">
+          <label htmlFor="insights-search" className="eyebrow text-red-dark">
             Search posts
           </label>
           <input
@@ -81,7 +83,7 @@ function Page() {
                       "nav-label border px-4 py-2.5 transition-colors",
                       pressed
                         ? "border-red bg-red text-white"
-                        : "border-gray-400 bg-white text-navy hover:border-red hover:text-red",
+                        : "border-gray-400 bg-white text-navy hover:border-red hover:text-red-dark",
                     )}
                   >
                     {topic}
@@ -106,12 +108,12 @@ function Page() {
           <ul className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {results.map((post) => (
               <li key={post.slug} className="flex flex-col border-t border-gray-400 pt-6">
-                <p className="eyebrow text-red">{post.topic}</p>
+                <p className="eyebrow text-red-dark">{post.topic}</p>
                 <h3 className="mt-3 text-xl">
                   <Link
                     to="/insights/$slug"
                     params={{ slug: post.slug }}
-                    className="text-navy underline decoration-1 underline-offset-4 hover:text-red"
+                    className="text-navy underline decoration-1 underline-offset-4 hover:text-red-dark"
                   >
                     {post.title}
                   </Link>
