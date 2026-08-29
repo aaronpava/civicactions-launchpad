@@ -70,7 +70,8 @@ function Page() {
               <p className="mt-5 text-ink">{block.body}</p>
               <p className="mt-5">
                 <Link
-                  to={block.linkTo}
+                  to="/insights/$slug"
+                  params={{ slug: block.linkSlug }}
                   className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
                 >
                   {block.linkLabel}
@@ -116,11 +117,11 @@ function Page() {
           ) : (
             <ul className="mt-8 divide-y divide-white/30 border-y border-white/30">
               {openPositions.map((position) => (
-                <li key={position.to} className="py-6">
+                <li key={position.title} className="py-6">
                   <h3 className="text-xl text-white">
-                    <Link to={position.to} className="underline underline-offset-4">
+                    <a href={position.applyHref} className="underline underline-offset-4">
                       {position.title}
-                    </Link>
+                    </a>
                   </h3>
                   <p className="mt-2 text-base text-white/90">{position.location}</p>
                   <p className="mt-2 text-base text-white/90">{position.summary}</p>
@@ -154,9 +155,10 @@ function Page() {
           </h2>
           <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {culturePosts.map((post) => (
-              <li key={post.to} className="border-t border-gray-400 pt-5">
+              <li key={post.slug} className="border-t border-gray-400 pt-5">
                 <Link
-                  to={post.to}
+                  to="/insights/$slug"
+                  params={{ slug: post.slug }}
                   className="text-lg text-navy underline decoration-1 underline-offset-4 hover:text-red"
                 >
                   {post.title}

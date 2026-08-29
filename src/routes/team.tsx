@@ -48,7 +48,7 @@ function Page() {
           <p className="mt-5 text-ink">{teamNote.body}</p>
           <p className="mt-6">
             <Link
-              to={teamNote.linkTo}
+              to="/careers"
               className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
             >
               {teamNote.linkLabel}

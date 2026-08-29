@@ -1,7 +1,7 @@
 export type Benefit = { title: string; body: string };
 export type HiringStep = { title: string; body: string };
-export type CulturePost = { title: string; to: string };
-export type OpenPosition = { title: string; location: string; summary: string; to: string };
+export type CulturePost = { title: string; slug: string };
+export type OpenPosition = { title: string; location: string; summary: string; applyHref: string };
 
 export const careersHero = {
   title: "Work for the public good.",
@@ -18,14 +18,14 @@ export const whoWeAre = {
   title: "Who we are",
   body: "CivicActions is built on a culture of openness, authenticity, and appreciation. We find inspiration in the things that make each of us unique, and we continually share and learn from each other. We are people first, striving to make the world better through our work, but also creating an environment that allows us to care for ourselves and each other.",
   linkLabel: "Learn about how we bring our humanity to work",
-  linkTo: "/insights/humanity-at-work",
+  linkSlug: "thirty-second-ritual",
 };
 
 export const whatWeLookFor = {
   title: "What we look for",
   body: "Hiring smart and friendly people is the most important thing we do for ourselves and our clients. We look for folks with high emotional intelligence and strong communication skills. We also believe that your willingness to learn and grow is as valuable as your existing skill set. We seek self-motivated, curious people who want to make a difference.",
   linkLabel: "Learn about our unique hiring process",
-  linkTo: "/insights/our-hiring-process",
+  linkSlug: "fierce-openness",
 };
 
 export const benefitsIntro =
@@ -101,10 +101,10 @@ export const hiringClosing =
   "If all goes well, we will answer any questions and welcome you to the CivicActions team!";
 
 export const culturePosts: CulturePost[] = [
-  { title: "Quickly shifting to distributed teams in government", to: "/insights/shifting-to-distributed-teams" },
-  { title: "Best practices for agency teams transitioning to telework", to: "/insights/telework-best-practices" },
-  { title: "Improving scrum team flow on digital service projects", to: "/insights/improving-scrum-team-flow" },
-  { title: "The 30-second ritual that helps us work better together", to: "/insights/thirty-second-ritual" },
-  { title: "How our distributed team makes up for a year apart", to: "/insights/a-year-apart" },
+  { title: "Quickly shifting to distributed teams in government", slug: "shifting-to-distributed-teams" },
+  { title: "Best practices for agency teams transitioning to telework", slug: "telework-best-practices" },
+  { title: "Improving scrum team flow on digital service projects", slug: "improving-scrum-team-flow" },
+  { title: "The 30-second ritual that helps us work better together", slug: "thirty-second-ritual" },
+  { title: "How our distributed team makes up for a year apart", slug: "a-year-apart" },
   { title: 'What "fierce openness" can do for government', to: "/insights/fierce-openness" },
 ];

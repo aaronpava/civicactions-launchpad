@@ -25,6 +25,7 @@ import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug
 import { Route as ContractingIndexRouteImport } from './routes/contracting.index'
 import { Route as ContractingSewpViRouteImport } from './routes/contracting.sewp-vi'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
+import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesDitapRouteImport } from './routes/services.ditap'
 
@@ -108,6 +109,11 @@ const InsightsIndexRoute = InsightsIndexRouteImport.update({
   path: '/insights/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights/$slug',
+  path: '/insights/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/ditap': typeof ServicesDitapRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/contracting/': typeof ContractingIndexRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/ditap': typeof ServicesDitapRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/contracting': typeof ContractingIndexRoute
@@ -174,6 +182,7 @@ export interface FileRoutesById {
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/ditap': typeof ServicesDitapRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/contracting/': typeof ContractingIndexRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/team'
     | '/case-studies/$slug'
     | '/contracting/sewp-vi'
+    | '/insights/$slug'
     | '/services/ditap'
     | '/case-studies/'
     | '/contracting/'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/team'
     | '/case-studies/$slug'
     | '/contracting/sewp-vi'
+    | '/insights/$slug'
     | '/services/ditap'
     | '/case-studies'
     | '/contracting'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '/team'
     | '/case-studies/$slug'
     | '/contracting/sewp-vi'
+    | '/insights/$slug'
     | '/services/ditap'
     | '/case-studies/'
     | '/contracting/'
@@ -257,6 +269,7 @@ export interface RootRouteChildren {
   TeamRoute: typeof TeamRoute
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
   ContractingSewpViRoute: typeof ContractingSewpViRoute
+  InsightsSlugRoute: typeof InsightsSlugRoute
   ServicesDitapRoute: typeof ServicesDitapRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
   ContractingIndexRoute: typeof ContractingIndexRoute
@@ -378,6 +391,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/$slug': {
+      id: '/insights/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -409,6 +429,7 @@ const rootRouteChildren: RootRouteChildren = {
   TeamRoute: TeamRoute,
   CaseStudiesSlugRoute: CaseStudiesSlugRoute,
   ContractingSewpViRoute: ContractingSewpViRoute,
+  InsightsSlugRoute: InsightsSlugRoute,
   ServicesDitapRoute: ServicesDitapRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
   ContractingIndexRoute: ContractingIndexRoute,
