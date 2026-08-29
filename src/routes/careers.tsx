@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ButtonLink } from "@/components/brand/Button";
 import { CtaBanner } from "@/components/brand/CtaBanner";
 import { Quote } from "@/components/brand/Quote";
 import {
@@ -184,9 +183,6 @@ function Page() {
         primary={{ label: "See open positions", to: "/careers" }}
         secondary={{ label: "Meet our team", to: "/team" }}
       />
-      <div className="sr-only">
-        <ButtonLink to="/contact">Contact us</ButtonLink>
-      </div>
     </>
   );
 }
