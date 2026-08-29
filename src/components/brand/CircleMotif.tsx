@@ -17,7 +17,7 @@ export function CircleMotif({
   priority?: boolean;
 }) {
   return (
-    <div className={cn("relative w-full max-w-[520px] overflow-hidden pt-3", className)}>
+    <div className={cn("relative w-full max-w-[520px] pt-3", className)}>
       <div className="relative aspect-square">
         <div className="absolute inset-0 overflow-hidden rounded-full bg-brand-blue">
           <img
@@ -39,7 +39,7 @@ export function CircleMotif({
           </svg>
         </div>
       </div>
-      <RedSquares className="absolute -top-2 right-[-10%] w-[26%]" />
+      <RedSquares className="absolute -top-1 right-0 w-[26%]" />
     </div>
   );
 }
