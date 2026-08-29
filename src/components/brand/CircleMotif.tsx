@@ -45,14 +45,14 @@ export function CircleMotif({
 }
 
 function RedSquares({ className }: { className?: string }) {
-  const small = [
+  const small: Array<[number, number]> = [
     [1, 0],
     [0, 1],
     [1, 1],
     [2, 1],
     [1, 2],
   ];
-  const big = [
+  const big: Array<[number, number]> = [
     [3, 0],
     [2, 1],
     [3, 1],
