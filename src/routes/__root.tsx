@@ -102,6 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "CivicActions helps U.S. government agencies deliver trusted public services through open technology and human-centered design.",
       },
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:site_name", content: "CivicActions" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
