@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-white">
       <div className="container-1200 flex items-center justify-between gap-6 py-5">
-        <Wordmark />
+        <Wordmark className="w-[200px]" />
         <div className="flex items-center gap-8">
           <DesktopNav />
           <ButtonLink to="/contact" tone="red" className="hidden lg:inline-flex">
