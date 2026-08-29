@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageStub } from "@/components/brand/PageStub";
 
-export const Route = createFileRoute("/case-studies")({
+export const Route = createFileRoute("/case-studies/")({
   head: () => ({
     meta: [
       { title: "Case Studies | CivicActions" },

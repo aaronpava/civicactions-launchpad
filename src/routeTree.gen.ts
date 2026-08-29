@@ -10,33 +10,255 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccessibilityStatementRouteImport } from './routes/accessibility-statement'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ContractingRouteImport } from './routes/contracting'
+import { Route as FeedbackRouteImport } from './routes/feedback'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as LicensingRouteImport } from './routes/licensing'
+import { Route as PressRouteImport } from './routes/press'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SustainabilityRouteImport } from './routes/sustainability'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
+import { Route as ContractingSewpViRouteImport } from './routes/contracting.sewp-vi'
+import { Route as ServicesDitapRouteImport } from './routes/services.ditap'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccessibilityStatementRoute = AccessibilityStatementRouteImport.update({
+  id: '/accessibility-statement',
+  path: '/accessibility-statement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContractingRoute = ContractingRouteImport.update({
+  id: '/contracting',
+  path: '/contracting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicensingRoute = LicensingRouteImport.update({
+  id: '/licensing',
+  path: '/licensing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SustainabilityRoute = SustainabilityRouteImport.update({
+  id: '/sustainability',
+  path: '/sustainability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => CaseStudiesRoute,
+} as any)
+const ContractingSewpViRoute = ContractingSewpViRouteImport.update({
+  id: '/sewp-vi',
+  path: '/sewp-vi',
+  getParentRoute: () => ContractingRoute,
+} as any)
+const ServicesDitapRoute = ServicesDitapRouteImport.update({
+  id: '/ditap',
+  path: '/ditap',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accessibility-statement': typeof AccessibilityStatementRoute
+  '/careers': typeof CareersRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/contracting': typeof ContractingRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/impact': typeof ImpactRoute
+  '/insights': typeof InsightsRoute
+  '/licensing': typeof LicensingRoute
+  '/press': typeof PressRoute
+  '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/sustainability': typeof SustainabilityRoute
+  '/team': typeof TeamRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/services/ditap': typeof ServicesDitapRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accessibility-statement': typeof AccessibilityStatementRoute
+  '/careers': typeof CareersRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/contracting': typeof ContractingRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/impact': typeof ImpactRoute
+  '/insights': typeof InsightsRoute
+  '/licensing': typeof LicensingRoute
+  '/press': typeof PressRoute
+  '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/sustainability': typeof SustainabilityRoute
+  '/team': typeof TeamRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/services/ditap': typeof ServicesDitapRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accessibility-statement': typeof AccessibilityStatementRoute
+  '/careers': typeof CareersRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/contracting': typeof ContractingRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/impact': typeof ImpactRoute
+  '/insights': typeof InsightsRoute
+  '/licensing': typeof LicensingRoute
+  '/press': typeof PressRoute
+  '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/sustainability': typeof SustainabilityRoute
+  '/team': typeof TeamRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/services/ditap': typeof ServicesDitapRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/accessibility-statement'
+    | '/careers'
+    | '/case-studies'
+    | '/contact'
+    | '/contracting'
+    | '/feedback'
+    | '/impact'
+    | '/insights'
+    | '/licensing'
+    | '/press'
+    | '/privacy'
+    | '/services'
+    | '/sustainability'
+    | '/team'
+    | '/case-studies/$slug'
+    | '/contracting/sewp-vi'
+    | '/services/ditap'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/accessibility-statement'
+    | '/careers'
+    | '/case-studies'
+    | '/contact'
+    | '/contracting'
+    | '/feedback'
+    | '/impact'
+    | '/insights'
+    | '/licensing'
+    | '/press'
+    | '/privacy'
+    | '/services'
+    | '/sustainability'
+    | '/team'
+    | '/case-studies/$slug'
+    | '/contracting/sewp-vi'
+    | '/services/ditap'
+  id:
+    | '__root__'
+    | '/'
+    | '/accessibility-statement'
+    | '/careers'
+    | '/case-studies'
+    | '/contact'
+    | '/contracting'
+    | '/feedback'
+    | '/impact'
+    | '/insights'
+    | '/licensing'
+    | '/press'
+    | '/privacy'
+    | '/services'
+    | '/sustainability'
+    | '/team'
+    | '/case-studies/$slug'
+    | '/contracting/sewp-vi'
+    | '/services/ditap'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessibilityStatementRoute: typeof AccessibilityStatementRoute
+  CareersRoute: typeof CareersRoute
+  CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  ContractingRoute: typeof ContractingRouteWithChildren
+  FeedbackRoute: typeof FeedbackRoute
+  ImpactRoute: typeof ImpactRoute
+  InsightsRoute: typeof InsightsRoute
+  LicensingRoute: typeof LicensingRoute
+  PressRoute: typeof PressRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
+  SustainabilityRoute: typeof SustainabilityRoute
+  TeamRoute: typeof TeamRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +270,180 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accessibility-statement': {
+      id: '/accessibility-statement'
+      path: '/accessibility-statement'
+      fullPath: '/accessibility-statement'
+      preLoaderRoute: typeof AccessibilityStatementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contracting': {
+      id: '/contracting'
+      path: '/contracting'
+      fullPath: '/contracting'
+      preLoaderRoute: typeof ContractingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licensing': {
+      id: '/licensing'
+      path: '/licensing'
+      fullPath: '/licensing'
+      preLoaderRoute: typeof LicensingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sustainability': {
+      id: '/sustainability'
+      path: '/sustainability'
+      fullPath: '/sustainability'
+      preLoaderRoute: typeof SustainabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/$slug': {
+      id: '/case-studies/$slug'
+      path: '/$slug'
+      fullPath: '/case-studies/$slug'
+      preLoaderRoute: typeof CaseStudiesSlugRouteImport
+      parentRoute: typeof CaseStudiesRoute
+    }
+    '/contracting/sewp-vi': {
+      id: '/contracting/sewp-vi'
+      path: '/sewp-vi'
+      fullPath: '/contracting/sewp-vi'
+      preLoaderRoute: typeof ContractingSewpViRouteImport
+      parentRoute: typeof ContractingRoute
+    }
+    '/services/ditap': {
+      id: '/services/ditap'
+      path: '/ditap'
+      fullPath: '/services/ditap'
+      preLoaderRoute: typeof ServicesDitapRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface CaseStudiesRouteChildren {
+  CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
+}
+
+const CaseStudiesRouteChildren: CaseStudiesRouteChildren = {
+  CaseStudiesSlugRoute: CaseStudiesSlugRoute,
+}
+
+const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
+  CaseStudiesRouteChildren,
+)
+
+interface ContractingRouteChildren {
+  ContractingSewpViRoute: typeof ContractingSewpViRoute
+}
+
+const ContractingRouteChildren: ContractingRouteChildren = {
+  ContractingSewpViRoute: ContractingSewpViRoute,
+}
+
+const ContractingRouteWithChildren = ContractingRoute._addFileChildren(
+  ContractingRouteChildren,
+)
+
+interface ServicesRouteChildren {
+  ServicesDitapRoute: typeof ServicesDitapRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesDitapRoute: ServicesDitapRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessibilityStatementRoute: AccessibilityStatementRoute,
+  CareersRoute: CareersRoute,
+  CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  ContactRoute: ContactRoute,
+  ContractingRoute: ContractingRouteWithChildren,
+  FeedbackRoute: FeedbackRoute,
+  ImpactRoute: ImpactRoute,
+  InsightsRoute: InsightsRoute,
+  LicensingRoute: LicensingRoute,
+  PressRoute: PressRoute,
+  PrivacyRoute: PrivacyRoute,
+  ServicesRoute: ServicesRouteWithChildren,
+  SustainabilityRoute: SustainabilityRoute,
+  TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
