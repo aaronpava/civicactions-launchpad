@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import capitolDome from "@/assets/capitol-dome.jpg";
+import capitolDome from "@/assets/capitol-dome.png";
 
 /**
  * Brand motif: a photo masked into a circle over a flat blue fill, crossed by
@@ -26,7 +26,7 @@ export function CircleMotif({
             width={1024}
             height={1024}
             {...(priority ? {} : { loading: "lazy" as const })}
-            className="absolute inset-0 size-full object-cover mix-blend-multiply"
+            className="absolute inset-0 size-full object-cover"
           />
           <svg
             viewBox="0 0 100 100"
