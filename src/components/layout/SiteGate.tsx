@@ -24,6 +24,7 @@ export function SiteGate() {
         document.body.style.overflow = "";
       };
     }
+    return undefined;
   }, [unlocked]);
 
   if (unlocked !== false) return null;
@@ -31,7 +32,7 @@ export function SiteGate() {
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const value = inputRef.current?.value ?? "";
-    if (value === import.meta.env.VITE_SITE_PASSWORD) {
+    if (value === import.meta.env["VITE_SITE_PASSWORD"]) {
       sessionStorage.setItem(STORAGE_KEY, "true");
       setUnlocked(true);
     } else {
