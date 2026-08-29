@@ -1,7 +1,13 @@
 import type { HomeService } from "@/data/home";
 
 /** Small white line icons for the navy services grid. */
-export function HomeServiceIcon({ icon }: { icon: HomeService["icon"] }) {
+export function HomeServiceIcon({
+  icon,
+  className = "size-8 shrink-0 text-white",
+}: {
+  icon: HomeService["icon"];
+  className?: string;
+}) {
   const common = {
     viewBox: "0 0 24 24",
     fill: "none",
@@ -10,7 +16,7 @@ export function HomeServiceIcon({ icon }: { icon: HomeService["icon"] }) {
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     "aria-hidden": true,
-    className: "size-8 shrink-0 text-white",
+    className,
   };
   switch (icon) {
     case "web":
