@@ -15,7 +15,6 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as ImpactRouteImport } from './routes/impact'
-import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as LicensingRouteImport } from './routes/licensing'
 import { Route as PressRouteImport } from './routes/press'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -25,6 +24,8 @@ import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.inde
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as ContractingIndexRouteImport } from './routes/contracting.index'
 import { Route as ContractingSewpViRouteImport } from './routes/contracting.sewp-vi'
+import { Route as InsightsIndexRouteImport } from './routes/insights.index'
+import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesDitapRouteImport } from './routes/services.ditap'
 
@@ -56,11 +57,6 @@ const FeedbackRoute = FeedbackRouteImport.update({
 const ImpactRoute = ImpactRouteImport.update({
   id: '/impact',
   path: '/impact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsRoute = InsightsRouteImport.update({
-  id: '/insights',
-  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LicensingRoute = LicensingRouteImport.update({
@@ -108,6 +104,16 @@ const ContractingSewpViRoute = ContractingSewpViRouteImport.update({
   path: '/contracting/sewp-vi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights/$slug',
+  path: '/insights/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -126,7 +132,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/feedback': typeof FeedbackRoute
   '/impact': typeof ImpactRoute
-  '/insights': typeof InsightsRoute
   '/licensing': typeof LicensingRoute
   '/press': typeof PressRoute
   '/privacy': typeof PrivacyRoute
@@ -134,9 +139,11 @@ export interface FileRoutesByFullPath {
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/ditap': typeof ServicesDitapRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/contracting/': typeof ContractingIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -146,7 +153,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/feedback': typeof FeedbackRoute
   '/impact': typeof ImpactRoute
-  '/insights': typeof InsightsRoute
   '/licensing': typeof LicensingRoute
   '/press': typeof PressRoute
   '/privacy': typeof PrivacyRoute
@@ -154,9 +160,11 @@ export interface FileRoutesByTo {
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/ditap': typeof ServicesDitapRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/contracting': typeof ContractingIndexRoute
+  '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -167,7 +175,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/feedback': typeof FeedbackRoute
   '/impact': typeof ImpactRoute
-  '/insights': typeof InsightsRoute
   '/licensing': typeof LicensingRoute
   '/press': typeof PressRoute
   '/privacy': typeof PrivacyRoute
@@ -175,9 +182,11 @@ export interface FileRoutesById {
   '/team': typeof TeamRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/contracting/sewp-vi': typeof ContractingSewpViRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/services/ditap': typeof ServicesDitapRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/contracting/': typeof ContractingIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -189,7 +198,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/feedback'
     | '/impact'
-    | '/insights'
     | '/licensing'
     | '/press'
     | '/privacy'
@@ -197,9 +205,11 @@ export interface FileRouteTypes {
     | '/team'
     | '/case-studies/$slug'
     | '/contracting/sewp-vi'
+    | '/insights/$slug'
     | '/services/ditap'
     | '/case-studies/'
     | '/contracting/'
+    | '/insights/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -209,7 +219,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/feedback'
     | '/impact'
-    | '/insights'
     | '/licensing'
     | '/press'
     | '/privacy'
@@ -217,9 +226,11 @@ export interface FileRouteTypes {
     | '/team'
     | '/case-studies/$slug'
     | '/contracting/sewp-vi'
+    | '/insights/$slug'
     | '/services/ditap'
     | '/case-studies'
     | '/contracting'
+    | '/insights'
     | '/services'
   id:
     | '__root__'
@@ -229,7 +240,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/feedback'
     | '/impact'
-    | '/insights'
     | '/licensing'
     | '/press'
     | '/privacy'
@@ -237,9 +247,11 @@ export interface FileRouteTypes {
     | '/team'
     | '/case-studies/$slug'
     | '/contracting/sewp-vi'
+    | '/insights/$slug'
     | '/services/ditap'
     | '/case-studies/'
     | '/contracting/'
+    | '/insights/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -250,7 +262,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FeedbackRoute: typeof FeedbackRoute
   ImpactRoute: typeof ImpactRoute
-  InsightsRoute: typeof InsightsRoute
   LicensingRoute: typeof LicensingRoute
   PressRoute: typeof PressRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -258,9 +269,11 @@ export interface RootRouteChildren {
   TeamRoute: typeof TeamRoute
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
   ContractingSewpViRoute: typeof ContractingSewpViRoute
+  InsightsSlugRoute: typeof InsightsSlugRoute
   ServicesDitapRoute: typeof ServicesDitapRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
   ContractingIndexRoute: typeof ContractingIndexRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -306,13 +319,6 @@ declare module '@tanstack/react-router' {
       path: '/impact'
       fullPath: '/impact'
       preLoaderRoute: typeof ImpactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights': {
-      id: '/insights'
-      path: '/insights'
-      fullPath: '/insights'
-      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/licensing': {
@@ -378,6 +384,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContractingSewpViRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/$slug': {
+      id: '/insights/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -402,7 +422,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FeedbackRoute: FeedbackRoute,
   ImpactRoute: ImpactRoute,
-  InsightsRoute: InsightsRoute,
   LicensingRoute: LicensingRoute,
   PressRoute: PressRoute,
   PrivacyRoute: PrivacyRoute,
@@ -410,9 +429,11 @@ const rootRouteChildren: RootRouteChildren = {
   TeamRoute: TeamRoute,
   CaseStudiesSlugRoute: CaseStudiesSlugRoute,
   ContractingSewpViRoute: ContractingSewpViRoute,
+  InsightsSlugRoute: InsightsSlugRoute,
   ServicesDitapRoute: ServicesDitapRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
   ContractingIndexRoute: ContractingIndexRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport

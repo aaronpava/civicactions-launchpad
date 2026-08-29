@@ -22,7 +22,7 @@ export type HomeService = { title: string; to: string; icon: "web" | "gear" | "c
 
 export const homeServices: HomeService[] = [
   { title: "Web & CMS", to: "/services#web-cms", icon: "web" },
-  { title: "IT & Service Modernization", to: "/services#it-modernization", icon: "gear" },
+  { title: "IT & Service Modernization", to: "/services#service-modernization", icon: "gear" },
   { title: "Product & Design", to: "/services#product-design", icon: "compass" },
   { title: "Security & Compliance", to: "/services#security-compliance", icon: "shield" },
   { title: "Data Services", to: "/services#data-services", icon: "data" },
