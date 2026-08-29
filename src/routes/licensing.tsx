@@ -1,18 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageStub } from "@/components/brand/PageStub";
+import { ProsePage, ProseSection } from "@/components/brand/ProsePage";
+import { legalPages } from "@/data/company";
+
+const page = legalPages.licensing;
+const title = `${page.title} | CivicActions`;
 
 export const Route = createFileRoute("/licensing")({
   head: () => ({
     meta: [
-      { title: "Licensing | CivicActions" },
-      { name: "description", content: "Licensing information for CivicActions content." },
-      { property: "og:title", content: "Licensing | CivicActions" },
-      { property: "og:description", content: "Licensing information for CivicActions content." },
+      { title },
+      { name: "description", content: page.description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: page.description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,
 });
 
 function Page() {
-  return <PageStub title="Licensing" intro="Licensing information for CivicActions content." />;
+  return (
+    <ProsePage title={page.title} intro={page.description}>
+      {page.sections.map((section) => (
+        <ProseSection key={section.heading} heading={section.heading} paragraphs={section.paragraphs} />
+      ))}
+    </ProsePage>
+  );
 }
