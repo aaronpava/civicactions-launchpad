@@ -105,7 +105,30 @@
     outline: 2px solid var(--color-navy);
     outline-offset: 2px;
   }
+
+  /* Keep the focus ring visible on dark brand surfaces. */
+  .bg-navy :focus-visible,
+  .bg-red :focus-visible,
+  .bg-red-dark :focus-visible {
+    outline-color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
+
 
 @utility container-1200 {
   width: 100%;

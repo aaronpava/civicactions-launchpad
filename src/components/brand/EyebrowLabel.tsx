@@ -8,5 +8,5 @@ export function EyebrowLabel({
   children: ReactNode;
   className?: string | undefined;
 }) {
-  return <p className={cn("eyebrow text-red", className)}>{children}</p>;
+  return <p className={cn("eyebrow text-red-dark", className)}>{children}</p>;
 }

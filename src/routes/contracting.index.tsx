@@ -13,6 +13,8 @@ export const Route = createFileRoute("/contracting/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -36,13 +38,13 @@ function Page() {
           {contracting.vehicles.map((vehicle) => (
             <li key={vehicle.name} className="border border-gray-400 p-6">
               <h3 className="text-xl text-navy">{vehicle.name}</h3>
-              <p className="eyebrow mt-2 text-red">{vehicle.number}</p>
+              <p className="eyebrow mt-2 text-red-dark">{vehicle.number}</p>
               <p className="mt-3 text-base text-ink">{vehicle.description}</p>
               {vehicle.name === "NASA SEWP VI" ? (
                 <p className="mt-4 text-base">
                   <Link
                     to="/contracting/sewp-vi"
-                    className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+                    className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
                   >
                     How to order through SEWP VI
                   </Link>
@@ -72,7 +74,7 @@ function Page() {
             <dl className="mt-5 space-y-3 text-base text-ink">
               {contracting.identifiers.map((item) => (
                 <div key={item.label}>
-                  <dt className="eyebrow text-red">{item.label}</dt>
+                  <dt className="eyebrow text-red-dark">{item.label}</dt>
                   <dd className="mt-1">{item.value}</dd>
                 </div>
               ))}

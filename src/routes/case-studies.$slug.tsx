@@ -22,6 +22,8 @@ export const Route = createFileRoute("/case-studies/$slug")({
         { name: "description", content: loaderData.summary },
         { property: "og:title", content: pageTitle },
         { property: "og:description", content: loaderData.summary },
+        { name: "twitter:title", content: pageTitle },
+        { name: "twitter:description", content: loaderData.summary },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
       ],

@@ -36,7 +36,7 @@ export function ServicesSectionNav({ services }: { services: ServiceDetail[] }) 
                   "block whitespace-nowrap px-4 py-2 text-base lg:whitespace-normal lg:border-l-4 lg:py-3",
                   isActive
                     ? "border-red bg-gray-100 font-bold text-navy lg:bg-transparent"
-                    : "border-gray-400 text-ink hover:text-red",
+                    : "border-gray-400 text-ink hover:text-red-dark",
                 )}
               >
                 {s.eyebrow}

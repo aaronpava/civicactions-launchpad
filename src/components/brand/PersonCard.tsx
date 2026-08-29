@@ -13,13 +13,16 @@ export function PersonCard({ person }: { person: Person }) {
           <img
             src={person.photo}
             alt={`Portrait of ${person.name}`}
+            width={512}
+            height={512}
             loading="lazy"
             className="size-full object-cover"
           />
+
         ) : null}
       </div>
       <h3 className="mt-4 text-xl">{person.name}</h3>
-      <p className="eyebrow mt-1 text-red">{person.role}</p>
+      <p className="eyebrow mt-1 text-red-dark">{person.role}</p>
       {person.bio ? <p className="mt-3 text-base text-ink">{person.bio}</p> : null}
     </article>
   );

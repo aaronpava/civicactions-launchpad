@@ -27,6 +27,8 @@ export const Route = createFileRoute("/careers")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -72,7 +74,7 @@ function Page() {
                 <Link
                   to="/insights/$slug"
                   params={{ slug: block.linkSlug }}
-                  className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+                  className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
                 >
                   {block.linkLabel}
                 </Link>
@@ -139,7 +141,7 @@ function Page() {
         <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {hiringSteps.map((step, index) => (
             <li key={step.title} className="border-t-4 border-red pt-5">
-              <p className="font-serif text-3xl text-red">{index + 1}</p>
+              <p className="font-serif text-3xl text-red-dark">{index + 1}</p>
               <h3 className="mt-2 text-xl text-navy">{step.title}</h3>
               <p className="mt-3 text-base text-ink">{step.body}</p>
             </li>
@@ -159,7 +161,7 @@ function Page() {
                 <Link
                   to="/insights/$slug"
                   params={{ slug: post.slug }}
-                  className="text-lg text-navy underline decoration-1 underline-offset-4 hover:text-red"
+                  className="text-lg text-navy underline decoration-1 underline-offset-4 hover:text-red-dark"
                 >
                   {post.title}
                 </Link>

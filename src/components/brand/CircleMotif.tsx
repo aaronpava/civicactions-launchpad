@@ -17,7 +17,7 @@ export function CircleMotif({
   priority?: boolean;
 }) {
   return (
-    <div className={cn("relative w-full max-w-[520px]", className)}>
+    <div className={cn("relative w-full max-w-[520px] overflow-hidden pt-3", className)}>
       <div className="relative aspect-square">
         <div className="absolute inset-0 overflow-hidden rounded-full bg-brand-blue">
           <img

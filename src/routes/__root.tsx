@@ -19,7 +19,7 @@ import { Footer } from "@/components/layout/Footer";
 function NotFoundComponent() {
   return (
     <section className="container-1200 py-16 md:py-24">
-      <p className="eyebrow text-red">Error 404</p>
+      <p className="eyebrow text-red-dark">Error 404</p>
       <h1 className="mt-3 max-w-3xl text-navy">
         Sorry, it seems the page you were looking for was not found.
       </h1>
@@ -28,14 +28,14 @@ function NotFoundComponent() {
       </p>
       <ul className="mt-8 space-y-3 text-lg">
         <li>
-          <Link to="/" className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark">
+          <Link to="/" className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy">
             Home
           </Link>
         </li>
         <li>
           <Link
             to="/services"
-            className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+            className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
           >
             Services
           </Link>
@@ -43,7 +43,7 @@ function NotFoundComponent() {
         <li>
           <Link
             to="/case-studies"
-            className="text-red underline decoration-1 underline-offset-4 hover:text-red-dark"
+            className="text-red-dark underline decoration-1 underline-offset-4 hover:text-navy"
           >
             Case studies
           </Link>
@@ -111,11 +111,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
+        rel: "preload",
+        as: "style",
+        href: "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@400;600;700;800&display=swap",
+      },
+      {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@400;600;700;800&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,

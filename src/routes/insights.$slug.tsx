@@ -21,6 +21,8 @@ export const Route = createFileRoute("/insights/$slug")({
         { name: "description", content: loaderData.excerpt },
         { property: "og:title", content: pageTitle },
         { property: "og:description", content: loaderData.excerpt },
+        { name: "twitter:title", content: pageTitle },
+        { name: "twitter:description", content: loaderData.excerpt },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
@@ -36,7 +38,7 @@ function PostNotFound() {
       <h1 className="text-navy">Post not found</h1>
       <p className="mt-6 max-w-2xl text-ink">
         We couldn't find that post.{" "}
-        <Link to="/insights" className="text-red underline decoration-1 underline-offset-4">
+        <Link to="/insights" className="text-red-dark underline decoration-1 underline-offset-4">
           Browse all insights
         </Link>
         .
@@ -55,7 +57,7 @@ function Page() {
     <>
       <article className="container-1200 py-14 md:py-20">
         <div className="max-w-[680px]">
-          <p className="eyebrow text-red">{post.topic}</p>
+          <p className="eyebrow text-red-dark">{post.topic}</p>
           <h1 className="mt-3 text-navy">{post.title}</h1>
           <p className="mt-6 text-base text-ink">
             By {post.author} · <time dateTime={post.date}>{post.displayDate}</time>
@@ -78,12 +80,12 @@ function Page() {
           <ul className="mt-8 grid gap-8 md:grid-cols-3">
             {related.map((item) => (
               <li key={item.slug} className="border-t border-gray-400 pt-5">
-                <p className="eyebrow text-red">{item.topic}</p>
+                <p className="eyebrow text-red-dark">{item.topic}</p>
                 <h3 className="mt-2 text-xl">
                   <Link
                     to="/insights/$slug"
                     params={{ slug: item.slug }}
-                    className="text-navy underline decoration-1 underline-offset-4 hover:text-red"
+                    className="text-navy underline decoration-1 underline-offset-4 hover:text-red-dark"
                   >
                     {item.title}
                   </Link>

@@ -36,7 +36,7 @@ export function DesktopNav() {
                 aria-expanded={open}
                 aria-controls={group.id}
                 onClick={() => setOpenId(open ? null : group.id)}
-                className="nav-label flex items-center gap-2 py-2 text-navy hover:text-red"
+                className="nav-label flex items-center gap-2 py-2 text-navy hover:text-red-dark"
               >
                 {group.label}
                 {open ? (
@@ -58,7 +58,7 @@ export function DesktopNav() {
                     <Link
                       to={item.to}
                       onClick={() => setOpenId(null)}
-                      className="nav-label block px-7 py-2.5 text-navy hover:text-red"
+                      className="nav-label block px-7 py-2.5 text-navy hover:text-red-dark"
                     >
                       {item.label}
                     </Link>
@@ -70,7 +70,7 @@ export function DesktopNav() {
         })}
         {navSingles.map((item) => (
           <li key={item.label}>
-            <Link to={item.to} className="nav-label block py-2 text-navy hover:text-red">
+            <Link to={item.to} className="nav-label block py-2 text-navy hover:text-red-dark">
               {item.label}
             </Link>
           </li>

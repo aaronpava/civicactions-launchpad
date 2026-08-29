@@ -31,8 +31,19 @@ export const Route = createFileRoute("/")({
         content:
           "We help government deliver trusted public services through open technology and design.",
       },
+      {
+        name: "twitter:title",
+        content: "CivicActions — Trusted public services through open technology",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "We help government deliver trusted public services through open technology and design.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+
   component: Index,
 });
 

@@ -12,6 +12,8 @@ export const Route = createFileRoute("/licensing")({
       { name: "description", content: page.description },
       { property: "og:title", content: title },
       { property: "og:description", content: page.description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: page.description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

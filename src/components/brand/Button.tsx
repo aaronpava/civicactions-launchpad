@@ -11,7 +11,7 @@ const base =
 const styles: Record<ButtonTone, Record<ButtonVariant, string>> = {
   red: {
     solid: "bg-red text-white hover:bg-red-dark",
-    outline: "border border-red text-red hover:bg-red hover:text-white",
+    outline: "border border-red text-red-dark hover:bg-red hover:text-white",
   },
   white: {
     solid: "bg-white text-navy hover:bg-gray-200",
