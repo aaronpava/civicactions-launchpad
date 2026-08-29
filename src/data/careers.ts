@@ -106,5 +106,5 @@ export const culturePosts: CulturePost[] = [
   { title: "Improving scrum team flow on digital service projects", slug: "improving-scrum-team-flow" },
   { title: "The 30-second ritual that helps us work better together", slug: "thirty-second-ritual" },
   { title: "How our distributed team makes up for a year apart", slug: "a-year-apart" },
-  { title: 'What "fierce openness" can do for government', to: "/insights/fierce-openness" },
+  { title: 'What "fierce openness" can do for government', slug: "fierce-openness" },
 ];
