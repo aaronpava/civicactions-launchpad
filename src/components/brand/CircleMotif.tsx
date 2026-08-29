@@ -26,7 +26,7 @@ export function CircleMotif({
             width={1024}
             height={1024}
             {...(priority ? {} : { loading: "lazy" as const })}
-            className="absolute inset-0 size-full object-cover"
+            className="absolute inset-x-0 bottom-0 w-full object-contain object-bottom"
           />
           <svg
             viewBox="0 0 100 100"

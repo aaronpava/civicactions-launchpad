@@ -46,18 +46,25 @@ export function Footer() {
 
           <div>
             <nav aria-label="CivicActions footer menu">
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
-                {footerMenu.flat().map((item) => (
-                  <li key={item.label}>
-                    <Link to={item.to} className={`${redLink} inline-flex items-center gap-1.5`}>
-                      {item.label}
-                      {item.external ? (
-                        <ExternalLink aria-hidden="true" className="size-4" />
-                      ) : null}
-                    </Link>
-                  </li>
+              <div className="grid grid-cols-2 gap-x-6 sm:grid-cols-3">
+                {footerMenu.map((column, i) => (
+                  <ul key={i} className="space-y-5">
+                    {column.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={item.to}
+                          className={`${redLink} inline-flex items-center gap-1.5`}
+                        >
+                          {item.label}
+                          {item.external ? (
+                            <ExternalLink aria-hidden="true" className="size-4" />
+                          ) : null}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 ))}
-              </ul>
+              </div>
             </nav>
             <ul className="mt-10 flex gap-3 lg:justify-end">
               {socialLinks.map((link) => (
