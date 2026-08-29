@@ -30,6 +30,7 @@ export type PhotoCaseStudy = {
   client: string;
   title: string;
   href?: string;
+  slug?: string;
   image: string;
   imageAlt: string;
 };
@@ -57,7 +58,15 @@ export function CaseStudyPhotoTile({ study }: { study: PhotoCaseStudy }) {
       <div className="absolute inset-x-0 bottom-0 p-6">
         <p className="eyebrow text-white/90">{study.client}</p>
         <h3 className="mt-2 font-serif text-xl leading-snug md:text-2xl">
-          {study.href ? (
+          {study.slug ? (
+            <Link
+              to="/case-studies/$slug"
+              params={{ slug: study.slug }}
+              className="text-white underline-offset-4 hover:underline"
+            >
+              {headline}
+            </Link>
+          ) : study.href ? (
             <Link to={study.href} className="text-white underline-offset-4 hover:underline">
               {headline}
             </Link>
