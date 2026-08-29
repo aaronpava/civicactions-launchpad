@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer id="site-footer" className="w-full bg-white py-16">
       <div className="container-1200">
-        <Wordmark className="!text-[2.75rem]" />
+        <Wordmark className="w-[220px]" />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-3">
           <div>
