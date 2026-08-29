@@ -32,11 +32,11 @@ function InterestForm() {
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const next: Record<string, string> = {};
-    if (!values.name.trim()) next.name = "Enter your name.";
-    if (!values.email.trim()) next.email = "Enter your email address.";
+    if (!values.name.trim()) next["name"] = "Enter your name.";
+    if (!values.email.trim()) next["email"] = "Enter your email address.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim()))
-      next.email = "Enter an email address in the format name@example.com.";
-    if (!values.agency.trim()) next.agency = "Enter your agency.";
+      next["email"] = "Enter an email address in the format name@example.com.";
+    if (!values.agency.trim()) next["agency"] = "Enter your agency.";
     setErrors(next);
     if (Object.keys(next).length > 0) {
       setSent(false);
